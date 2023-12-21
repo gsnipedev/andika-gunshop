@@ -27,6 +27,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductEntity store(CreateProductDto dto) {
         ProductEntity product = ProductEntity.builder()
                 .name(dto.getName())
+                .type(dto.getType())
                 .imageUrl(dto.getImageName())
                 .serialNumber(null)
                 .description(dto.getDescription())
@@ -51,12 +52,13 @@ public class ProductServiceImpl implements ProductService {
         product.setName(dto.getName());
         product.setDescription(dto.getDescription());
         product.setImageUrl(dto.getImageName());
+        product.setType(dto.getType());
 
         return productRepository.save(product);
     }
 
     @Override
     public void delete(Long id) {
-
+        productRepository.deleteById(id);
     }
 }

@@ -1,5 +1,6 @@
 package com.netheve.andikagunshop.entity;
 
+import com.netheve.andikagunshop.entity.enums.ProductType;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -22,7 +23,10 @@ public class ProductEntity {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column
+    private ProductType type;
+
+    @Column(nullable = false, length = 1000)
     private String description;
 
     @Column(nullable = true)
