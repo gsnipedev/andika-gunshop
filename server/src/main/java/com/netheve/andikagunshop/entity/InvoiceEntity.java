@@ -42,7 +42,7 @@ public class InvoiceEntity {
     @JoinColumn(nullable = false)
     private AccountEntity account;
 
-    @OneToMany
+    @OneToMany(cascade = {CascadeType.PERSIST})
     @JsonManagedReference
     private Set<CustomerOrderEntity> customerOrders;
 }

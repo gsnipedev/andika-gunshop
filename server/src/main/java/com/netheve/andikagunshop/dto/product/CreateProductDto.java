@@ -8,6 +8,7 @@ import lombok.Data;
 @Builder
 public class CreateProductDto {
     private String name;
+    private int price;
     private String description;
     private ProductType type;
     private String imageName;

@@ -34,6 +34,7 @@ public class ProductController {
     private ResponseEntity<?> create(
             @RequestParam MultipartFile productImage,
             @RequestParam String name,
+            @RequestParam int price,
             @RequestParam ProductType type,
             @RequestParam String description) {
 
@@ -43,6 +44,7 @@ public class ProductController {
 
         CreateProductDto dto = CreateProductDto.builder()
                 .name(name)
+                .price(price)
                 .description(description)
                 .type(type)
                 .imageName(fileName)
@@ -62,6 +64,7 @@ public class ProductController {
     private ResponseEntity<?> update(
             @RequestParam MultipartFile productImage,
             @RequestParam String name,
+            @RequestParam int price,
             @RequestParam ProductType type,
             @RequestParam String description,
             @PathVariable Long id) {
@@ -72,6 +75,7 @@ public class ProductController {
 
         UpdateProductDto dto = UpdateProductDto.builder()
                 .name(name)
+                .price(price)
                 .description(description)
                 .type(type)
                 .imageName(fileName)

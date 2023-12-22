@@ -28,8 +28,9 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity product = ProductEntity.builder()
                 .name(dto.getName())
                 .type(dto.getType())
+                .price(dto.getPrice())
                 .imageUrl(dto.getImageName())
-                .serialNumber(null)
+                .serialNumber("NO-SERIAL-NUMBER")
                 .description(dto.getDescription())
                 .build();
 
@@ -53,6 +54,7 @@ public class ProductServiceImpl implements ProductService {
         product.setDescription(dto.getDescription());
         product.setImageUrl(dto.getImageName());
         product.setType(dto.getType());
+        product.setPrice(dto.getPrice());
 
         return productRepository.save(product);
     }

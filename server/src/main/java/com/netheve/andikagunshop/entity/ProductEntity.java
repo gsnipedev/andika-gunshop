@@ -23,6 +23,9 @@ public class ProductEntity {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private int price;
+
     @Column
     private ProductType type;
 

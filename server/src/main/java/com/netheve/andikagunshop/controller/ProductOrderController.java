@@ -27,7 +27,7 @@ public class ProductOrderController {
         return ResponseEntity.ok(orderService.create(account, dto));
     }
 
-    @PostMapping("/approve/{id}")
+    @PatchMapping("/approve/{id}")
     private ResponseEntity<InvoiceEntity> approveOrder(@PathVariable Long id) {
         return ResponseEntity.ok(orderService.approve(id));
     }
